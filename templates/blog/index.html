@@ -1,0 +1,108 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+            <title>free lanceri</title>
+            <link rel="stylesheet" href="{% static 'css/index.css' %}">
+            <link rel="stylesheet" href="{% static 'css/indexresponsive.css' %}">
+            <link rel="stylesheet" href="{% static 'js/index.js' %}">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <script src="https://kit.fontawesome.com/006cb90729.js" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+    <body>
+        <section style="position: relative; width: 100%;">
+            <div class="navbar">
+                <ul>
+                    <div class="navleft">
+                       <li class="home"><a href=""><span class="material-symbols-outlined">home</span></a></li>
+                       <li><a href="">Work samples</a></li>
+                       <li><a href="">Cooperation Request</a></li>
+                    </div>
+                    <div class="navright">
+                        <div class="searchbox">
+                            <button class="search"><span class="material-symbols-outlined">search</span></button>
+                            <li><input class="searchinput" type="text" required placeholder="Search..."></li>
+                        </div>
+                        <div class="log">
+                            <li><button onclick="document.getElementById('backgroundlogin').style.display='flex';"class="login">login</button></li>
+                        </div>
+                    </div>
+                </ul>
+                <span id="burgermenu" class="material-symbols-outlined">menu_open</span>
+            </div>
+
+            <div class="sidenavbar" id="sidebar">
+                <ul>
+                       
+                       <li class="sidehome"><a href=""><span class="material-symbols-outlined">home</span>home</a></li>
+                       <li><a href="">Work samples</a></li>
+                       <li><a href="">Cooperation Request</a></li>
+                
+                    
+                        <div class="sidesearchbox">
+                            <button class="sidesearch"><span id="close" class="material-symbols-outlined">search</span></button>
+                            <li><input class="sidesearchinput" type="text" required placeholder="Search..."></li>
+                        </div>
+                        <div class="log">
+                            <li><button onclick="document.getElementById('backgroundlogin').style.display='flex';"class="login">login</button></li>
+                        </div>
+        
+                </ul>
+            </div>
+        </section>
+        <section>
+            <div id="backgroundlogin" style="position:absolute;">
+                    <div class="loginform" id="login">
+                        <div class="topform">
+                            
+                            <span onclick="document.getElementById('backgroundlogin').style.display='none'" class="material-symbols-outlined">close</span>
+                        </div>
+                            <div class="switch">
+
+                                <div class="circle" id="circle" onclick="button()" >
+                                    <span id="icon" class="material-symbols-outlined">arrow_outward</span>
+                                    </div>
+
+                            </div>
+                            
+                            <label class="loginitems" for="uname">Name:</label>
+                            <input class="loginitems" type="text" name="uname" value="" placeholder="UserName...">
+
+                            <label class="loginitems" for="phonenumber">phonenumber:</label>
+                            <input class="loginitems" type="text" value="" name="phonenumber" required placeholder="phonenumber...">
+
+                            <label class="loginitems" for="password">password:</label>
+                            <input class="loginitems" type="password" value="" name="password" required placeholder="password...">
+
+                            <p class="loginitems">Did you forget your password? <a href="">click here</a></p>
+                            <input class="loginitems" type="submit" value="login"> 
+
+                            <label class="signlabel" for="fname">Name:</label>
+                            <input class="signinput" type="text" name="fname" required placeholder="Your FirstName...">
+
+                            <label class="signlabel" for="lname">LastName:</label>
+                            <input class="signinput" type="text" name="lname" required placeholder="Your LastName...">
+
+                            <label class="signlabel" for="email">Email:</label>
+                            <input class="signinput" type="text" name="email" required placeholder="Your email...">
+
+                            <label class="signlabel" for="phnumber">phonenumber:</label>
+                            <input class="signinput" type="text" name="phnumber" placeholder="phonenumber..." required>
+
+                            <label class="signlabel" for="password">password:</label>
+                            <input class="signinput" type="text" name="password" required placeholder="Your password...">
+
+
+                            <input class="signinput" value="sign in" type="submit">
+
+                    </div>
+                </div>
+            <div class="container"></div>
+        </section>
+        <script src="{% static 'js/index.js' %}"></script>
+
+    </body>
+</html>
