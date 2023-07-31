@@ -12,22 +12,23 @@
     <div class="container tilt-in-br">
         <div class="left">
             <h1 class="tracking-in-expand" >Welcome back! &#128400</h1>
-            <form action="">
-                <p style="width: 70%; margin-top: 10px; font-size: 15px; font-family: sans-serif; color: rgba(57, 54, 54, 0.646);">you can also login with:</p>
-                <div class="socialmedia">
+            <form action="{% url 'users:login' %}" method="post">
+                {% csrf_token %}
+                <!-- <p style="width: 70%; margin-top: 10px; font-size: 15px; font-family: sans-serif; color: rgba(57, 54, 54, 0.646);">you can also login with:</p> -->
+                <!-- <div class="socialmedia">
                     <a href=""><i id="google" class="fa-brands fa-google"></i></a>
                     <a href=""><i id="facebook" class="fa-brands fa-facebook"></i></a>
                     <a href=""><i id="twitter" class="fa-brands fa-twitter"></i></a>
-                </div>
+                </div> -->
                 
                 <label for="email">Username:</label>
-                <input type="text" placeholder="gmail..." name="username" required>
+                <input type="text" placeholder="username..." name="username" required>
 
                 <label for="pass">Password:</label>
-                <input type="text" placeholder="password..." name="pass" required>
-                <p style="width: 70%;margin-top: 10px; font-size: 13px; font-family: sans-serif; color:rgba(54, 51, 51, 0.817)"> You don't have an account ?<a href="{% url 'users:signup' %}"> Create one</a></p>
+                <input type="password" placeholder="password..." name="password" required>
+                <p style="width: 70%;margin-top: 10px; font-size: 13px; font-family: sans-serif; color:rgba(54, 51, 51, 0.817)"><a href="{% url 'users:signup' %}">You don't have an account ?</a></p>
                 
-                <input type="submit" name="submit" value="login">
+                <button type="submit" style="background-color: rgb(110, 145, 198); margin-top: 25px; height: 45px; width: 75px;">SignUp</button>
 
             </form>
         </div>

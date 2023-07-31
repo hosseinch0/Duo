@@ -10,13 +10,12 @@ from users.forms import RegistrationForm
 def login_view(request):
     if not request.user.is_authenticated:
         if request.method == "POST":
-            form = AuthenticationForm(request=request, data=request.POST)
-            if form.is_valid():
-                username = form.cleaned_data["username"]
-                password = form.cleaned_data["password"]
+            username = request.POST.get("username")
+            password = request.POST.get("password")
 
-            user = authenticate(username=username, password=password)
+            user = authenticate(request, username=username, password=password)
             if user != None:
+                print("User found")
                 login(request, user)
                 messages.add_message(request, messages.SUCCESS, "Authentication successful, Logged in successfully")
                 return redirect("/")
