@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'blog',
     'users',
     'website'
@@ -138,3 +140,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MULTI_CAPTCHA_ADMIN = {
     'engine': 'simple-captcha',
 }
+
+# site id
+SITE_ID = 2

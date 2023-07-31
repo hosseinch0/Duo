@@ -3,6 +3,5 @@ from django.http import HttpResponse,JsonResponse,HttpResponseRedirect
 # Create your views here.
 
 
-
-def home_view(request):
-    return render(request, 'blog/index.html')
+def single_view(request):
+    return render(request, "blog/single.html")
