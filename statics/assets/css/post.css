@@ -1,0 +1,53 @@
+@media only screen and (max-width: 992px )
+{
+   .mid{
+    display: none;
+   }
+   .responsivemid{
+    display:flex;
+    width: 80VW;
+    height: 100VH;
+   }
+   .doublearrow{
+    display: flex;
+   }
+   .arrows{
+    display: none;
+   }
+   .navigationbar{
+      height: 34vh;
+      position: relative;
+  }
+  .navleft{
+      order:2;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 24vh;
+      transition: 0.5s;
+      position: absolute;
+      bottom: 0;
+      z-index: -10;
+  }
+  .navleft li{
+      width: 100%;
+      height:8vh;
+      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.387);
+  }
+  .home{
+      background-color: rgb(48, 43, 43);
+  }
+  .navright{
+      width: 100%;
+      background-color: white;
+      z-index: 5;
+  }
+  #menubutton{
+      display: flex;
+      cursor: pointer;
+      user-select:none;
+  }
+  #menubutton:hover{
+    color:rgb(55, 53, 53);
+  }
+}

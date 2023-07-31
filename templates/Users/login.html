@@ -1,15 +1,43 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method="post" action="{% url 'users:login' %}">
-        {% csrf_token %}
-        {{form}}
-        <button type="submit">Submit</button>
-    </form>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'assets/css/login.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'assets/css/loginresponsive.css' %}">
+        <script src="https://kit.fontawesome.com/006cb90729.js" crossorigin="anonymous"></script>
+        <title>Log In</title>
+    </head> 
+    <body>
+    <div class="container tilt-in-br">
+        <div class="left">
+            <h1 class="tracking-in-expand" >Welcome back! &#128400</h1>
+            <form action="">
+                <p style="width: 70%; margin-top: 10px; font-size: 15px; font-family: sans-serif; color: rgba(57, 54, 54, 0.646);">you can also login with:</p>
+                <div class="socialmedia">
+                    <a href=""><i id="google" class="fa-brands fa-google"></i></a>
+                    <a href=""><i id="facebook" class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i id="twitter" class="fa-brands fa-twitter"></i></a>
+                </div>
+                
+                <label for="email">Username:</label>
+                <input type="text" placeholder="gmail..." name="username" required>
+
+                <label for="pass">Password:</label>
+                <input type="text" placeholder="password..." name="pass" required>
+                <p style="width: 70%;margin-top: 10px; font-size: 13px; font-family: sans-serif; color:rgba(54, 51, 51, 0.817)"> You don't have an account ?<a href="{% url 'users:signup' %}"> Create one</a></p>
+                
+                <input type="submit" name="submit" value="login">
+
+            </form>
+        </div>
+        <div class="right">
+            <div class="box">
+                    <h1>Lorem ipsum dolor sit amet consecte</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae maiores voluptatibus illum quod molestias voluptatem natus. Aliquam repudiandae quibusdam quasi facere minus fuga asperiores. Ex suscipit reprehenderit magni veniam labore?</p>
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>

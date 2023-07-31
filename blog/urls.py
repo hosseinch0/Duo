@@ -5,5 +5,6 @@ from blog.views import *
 app_name = 'blog'
 
 urlpatterns = [
-    path('single/<int:pid>', single_view, name="single"),
+    path("", blog_view, name="blog"),
+    path('<int:pid>', blog_single, name="single"),
 ]

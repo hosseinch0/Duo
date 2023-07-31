@@ -1,15 +1,48 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="{% url 'users:signup' %}" method="post">
-        {% csrf_token %}
-        {{form}}
-        <button type="submit">Sign Up</button>
-    </form>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'assets/css/signin.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'assets/css/signinresonsive.css' %}">
+        <title>SignIn</title>
+    </head> 
+    <body>
+    <div class="container tilt-in-tl">
+        <div class="left">
+            <h1 class="tracking-in-expand" >hey hello! &#128400</h1>
+            <form action="{% url 'users:signup' %}" method="Post">
+                <label for="fname">Username:</label>
+                <input type="text" placeholder="firstName..." name="username" required>
+
+
+                <label for="fname">First name:</label>
+                <input type="text" placeholder="firstName..." name="first_name" required>
+
+                <label for="lname">Last name:</label>
+                <input type="text" placeholder="lastName..." name="last_name" required>
+
+                <label for="email">Email:</label>
+                <input type="text" placeholder="gmail..." name="email" required>
+
+                <label for="pass">Password:</label>
+                <input type="text" placeholder="password..." name="password1" required>
+
+                <label for="pass">Password Confirmation:</label>
+                <input type="text" placeholder="password..." name="password2" required>
+                <p style="width: 70%;margin-top: 10px; font-size: 13px; font-family: sans-serif; color:rgba(54, 51, 51, 0.817)"> you have acount?<a href="../log in/login.html">click here</a></p>
+                
+                <input type="submit" name="submit" value="sign in">
+
+            </form>
+        </div>
+        <div class="right">
+            <div class="box">
+                    <h1>Lorem ipsum dolor sit amet consecte</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae maiores voluptatibus illum quod molestias voluptatem natus. Aliquam repudiandae quibusdam quasi facere minus fuga asperiores. Ex suscipit reprehenderit magni veniam labore?</p>
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>

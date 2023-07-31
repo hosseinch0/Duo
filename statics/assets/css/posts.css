@@ -1,0 +1,637 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    user-select: none;
+    
+}
+body{
+    overflow-x: hidden;
+}
+.container{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+}
+.mid{
+    width: 80vw; 
+    height: 90vh;
+    display: flex;
+    justify-content:space-around;
+    align-items: center; position:
+    relative;
+}
+.right{
+    width: 10vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left{
+    height: 90vh;
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.responsivemid{
+    width: 80vw; 
+    height: 90vh;
+    justify-content:space-around;
+    align-items: center; 
+    position:relative;
+    display:none;
+    overflow-x: hidden;
+}
+.box{
+    border-radius:10px;
+    position: absolute;
+    left: 12.5%;
+    width: 75%;
+    height: 80%;
+    background-color: #343232;
+    animation-duration: 1s;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    z-index: 5;
+}
+.box1{
+    filter: blur(3px);
+    border-radius:5px;
+    animation-duration:1s;
+    position: absolute;
+    left:3.75%;
+    width:25%;
+    height: 50%;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.box2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 20px;
+    animation-duration:1s;
+    
+    left:32.5%;
+    position: absolute;
+    width: 35%;
+    height: 80%;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.box3{
+    filter: blur(3px);
+    border-radius: 20px;
+    animation-duration:1s;
+    position: absolute;
+    left:71.25%;
+    width: 25%;
+    height: 50%;
+    
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.box4{
+    position: absolute;
+    border-radius:10px;
+    width: 60%;
+    height: 60%;
+    left: 20%;
+    z-index: -5;
+    background-color:#343232;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    animation-duration: 1S;
+    filter: blur(3PX);
+}
+.form{
+    font-size: inherit;
+    position: relative;
+    border-radius: 0px 0px 10px 10px;
+    border:5px solid #343232;
+    font-family: sans-serif;
+    width: 100%;
+    height: 35%;
+    background-color: #f2f2f2;
+}
+.form p{
+    width: 100%;
+    border-bottom: 0.5px dotted #343232;
+    font-size: inherit;
+}
+.box2 .form{
+    padding: 5px;
+    font-size: 13px;
+}
+.box2 .form span{
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.box1 .form span{
+    margin-top: 10px; 
+    font-size: 13px;
+}
+
+.box1 .form{
+    padding: 5px;
+    font-size: 13px;
+
+}
+.box3 .form span{
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.box3 .form{
+    padding: 5px;
+    font-size: 13px;
+    background-color: #f2f2f2;
+}
+.information{
+    width: 100%;
+    height: 100%;
+    padding: 45px;
+    font-family: sans-serif;
+    text-align:justify;
+    color:rgb(0, 0, 0);
+    font-size: 17;
+    animation-duration: 0.75s;
+    
+    background: rgb(236,103,161);
+    background: linear-gradient(180deg, rgba(236,103,161,1) 0%, rgba(28,113,213,1) 100%);
+    position: absolute;
+    bottom: 0px;
+    border-radius: 10px;
+    z-index: 20;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.information p{
+    color:#00000073;
+}
+.box1 .information{
+    background: rgb(131,58,180);
+    background: linear-gradient(180deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+.box3 .information{
+    background: rgb(34,193,195);
+    background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+.information p{
+    text-decoration-line:underline;
+    line-height: 30px;
+}
+
+@keyframes up{
+    from{
+        height: 0;
+    }
+    to{
+        height: 100%;
+    }
+}
+.photo{
+    width: 100%;
+    height: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px 15px 0px 0px;
+    background-image: url(/photos/Jowhareh_galleries_6_poster_6206362b-eb48-46db-a74c-180b8acc330c.jpeg);
+}
+.photo4{
+    width: 100%;
+    height: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px 15px 0px 0px;
+    background-image: url(/photos/Jowhareh_galleries_poster_baa7ec19-3e2f-454d-8446-e707b3b993f0.jpeg);
+}
+.photo1{
+
+   
+    width: 100%;
+    height: 65%;
+    border-radius:15px 15px 0px 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(/photos/Jowhareh_galleries_6_poster_6206362b-eb48-46db-a74c-180b8acc330c.jpeg);
+}
+.photo2{
+    width: 100%;
+    height: 65%;
+    border-radius: 15px 15px 0px 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image:url(/photos/Jowhareh_galleries_6_poster_3b11a1a5-34ac-435d-83be-cc7e505e1aa5.jpeg);
+}
+.photo3{
+    width: 100%;
+    height: 65%;
+    border-radius: 15px 15px 0px 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image:url(/photos/Jowhareh_galleries_poster_baa7ec19-3e2f-454d-8446-e707b3b993f0.jpeg);
+}
+    
+@keyframes animationone{
+    0%{
+        width: 25%;
+        height:50%;
+        left:3.75%;
+        filter: blur(3px);
+        z-index: 0;
+    }
+    100%{
+        width: 35%;
+        height: 80%;
+        left:32.5%;
+        z-index: 100;
+        filter: blur(0px);
+    }
+}
+@keyframes animationtwo{
+    from{
+        width: 35%;
+        height: 80%;
+        left:32.5%;
+        filter: blur(0px);
+    }
+    to{
+        width: 25%;
+        height:50%;
+        left:71.25%;
+        filter: blur(3px);
+    }
+}
+@keyframes animationthree{
+    0%{
+        width: 25%;
+        height:50%;
+        left:71.25%;
+        font-size: 13px;
+        opacity: 1;
+    }
+    50%{
+        width: 0;
+        height:0;
+        left:100%;
+        font-size: 0;
+        opacity: -1;
+      
+        
+    }
+    50.0000000001%{
+        left:0;
+    }
+    100%{
+        width: 25%;
+        height:50%;
+        left:3.75%;
+        font-size: 13PX;
+    }
+}
+
+@keyframes reverseanimationone{
+    0%{
+        width: 25%;
+        height:50%;
+        left:3.75%;
+        opacity: 1;
+    }
+    50%{
+        width: 0;
+        height:0;
+     opacity: -1;
+        left:0;
+    }
+    50.0000000001%{
+        left:100%;
+    }
+    100%{
+        width: 25%;
+        height:50%;
+        left:71.25%;
+        opacity: 1;
+    }
+}
+@keyframes reverseanimationtwo{
+    from{
+        width: 35%;
+        height: 80%;
+        left:32.5%;
+    }
+    to{
+        width: 25%;
+        height:50%;
+        left:3.75%;
+    }
+}
+@keyframes reverseanimationthree{
+   0%{
+        height: 50%;
+        width: 25%;
+        left:71.25%;
+        z-index: 0;
+   }
+   100%{
+    height: 80%;
+    width: 35%;
+    left:32.5%;
+    z-index: 100;
+   }
+}
+@keyframes responsiveswitchleft{
+    0%{
+        width: 60%;
+        height: 60%;
+        left:20%;
+        z-index: -5;
+        filter: blur(3px);
+        
+    }
+    50%{
+        width:67.5%;
+        height: 70%;
+        left:-67.5%;
+        z-index: 0;
+        filter: blur(3px);
+    }
+    100%{
+        width: 75%;
+        height: 80%;
+        left: 12.5%;
+        z-index: 5;
+        filter: blur(0px);
+        
+    }
+}
+@keyframes responsiveswitchright{
+    0%{
+        width: 75%;
+        height: 80%;
+        left:12,5%;
+        z-index: 5;
+        filter: blur(0px);
+    }
+    50%{
+        width:67.5%;
+        height: 70%;
+        left:100%;
+        z-index: 0;
+        filter: blur(3px);
+
+    }
+    100%{
+        width: 60%;
+        height: 60%;
+        left: 20%;
+        z-index: -5;
+        filter: blur(3px);
+
+    }
+}
+@keyframes reverseresponsiveswitchright{
+0%{
+    width: 60%;
+    height: 60%;
+    left:20%;
+    z-index: -5;
+    filter: blur(3px);
+}
+50%{
+    width: 67.5%;
+    height: 70%;
+    left:100%;
+    z-index: 0;
+    filter: blur(3px);
+}
+100%{
+    width: 75%;
+    height: 80%;
+    left:12.5%;
+    z-index: 5;
+    filter: blur(0px);
+}
+}
+@keyframes reverseresponsiveswitchleft{
+    0%{
+        width: 75%;
+        height: 80%;
+        left:12.5%;
+        z-index: 5;
+        filter:blur(0px);
+    }
+    50%{
+        width: 67.5%;
+        height: 70%;
+        left:-67.5%;
+        z-index: 0;
+        filter: blur(3px);
+    }
+    100%{
+        width: 60%;
+        height: 60%;
+        left:20%;   
+        z-index: -5;
+        filter:blur(3px);
+    }
+    
+}
+.arrows{
+    width: 50px;
+    height: 50px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    z-index: 10;
+    user-select: none;
+    cursor: pointer;
+
+}
+.doublearrow{
+    background-color: whitesmoke;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display:none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    font-size: 40px;
+    user-select: none;
+    cursor: pointer;
+}
+.doublearrow:hover{
+    background-color: #343232;
+    color:rgba(255, 166, 0, 0.881);
+}
+
+.arrows:hover{
+    background-color: #343232;
+    color:rgba(255, 166, 0, 0.801);
+}
+.navigationbar{
+    width: 100%;
+    height: 10vh;
+}
+.navigationbar ul{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style:none;
+}
+.navleft , .navright{
+    width: 50%;
+    height: 10vh;
+    display: flex;
+}
+.navleft li , .navright li{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navleft li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-family: sans-serif;
+    color:rgb(93, 93, 232);
+    font-weight: 550;
+}
+.navleft li a:hover{
+    color:rgb(67, 62, 62);
+}
+#menubutton span{
+    font-size: 45px;
+    color:rgb(93, 93, 232)
+    
+}
+#menubutton{
+   display: none;
+}
+@keyframes showmenu{
+    from{
+        top:-24vh;
+    }
+    to{
+        top: 10vh;
+    }
+}
+@keyframes hidemenu{
+    from{
+        top:10vh;
+    }
+    to{
+        top:-24vh;
+    }
+}
+li input{
+    border-radius: 35px;
+    border: none;
+    width: 70%;
+    padding: 10px 15px;
+    background-color: #f2f2f2;
+    color:rgb(93, 93, 232);
+    font-family: sans-serif;
+    font-weight: 550;
+    
+}
+li button{
+    cursor: pointer;
+    border: none;
+    background: rgb(236,103,161);
+    background: linear-gradient(90deg, rgba(236,103,161,1) 0%, rgba(28,113,213,1) 100%);
+    padding:10px 35px;
+    border-radius: 25px;
+    transition: 0.5s;
+    margin-right: -30px;
+    box-shadow: 0px 3px 10px ;
+}
+li button:hover{
+    padding: 12px 42px;
+    background: rgb(131,58,180);
+    color:rgba(28,113,213,1);
+    background: linear-gradient(270deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+#search{
+    font-size: 30px;
+    color:rgb(93, 93, 232);
+    transition: 0.5s;
+    cursor: pointer;
+}
+#search:hover{
+    color:rgb(135, 135, 215) ;
+    font-size: 45px;
+    font-weight: 600;
+}
+.themebutton{
+    width: 120px;
+    height:40px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+}
+.themebutton span{
+    color:rgb(0, 0, 0);
+}
+.backgroundbutton{
+    background: rgb(236,103,161);
+    background: linear-gradient(270deg, rgba(236,103,161,1) 0%, rgba(28,113,213,1) 100%);
+    width: 116px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+    height: 38px;
+    border-radius: 35px;
+    margin: 2px;
+    box-shadow: 0px 0px 10px black inset;
+    
+
+}
+@keyframes ball{
+    from{
+        left:3px;
+    }
+    to{
+        left:75px;
+    }
+}
+@keyframes reverseball{
+    from{
+        left:75px;
+    }
+    to{
+        left:3px;
+    }
+}
+.ball{
+    position: absolute;
+    width: 38px;
+    z-index: 5;
+    animation-duration: 0.5s;
+    height: 35px;
+    background:rgba(51, 48, 48, 0.978);
+    border-radius: 50%;
+    left: 3px;
+    box-shadow: 0px 0px 5px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.ball span{
+    color:#ff0051
+}
+
