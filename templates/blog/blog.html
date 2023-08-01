@@ -1,14 +1,51 @@
 {% load static %}
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blog</title>
+    <link rel="stylesheet" href="{% static 'assets/css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/blogr.css' %}">
+    <script src="https://kit.fontawesome.com/006cb90729.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Blog Home</title>
 </head>
 <body>
-    {% for post in posts%}
-        <a href="{% url 'blog:single' pid=post.id%}">{{post.title}}</a>
-    {% endfor %}
+    <div class="top"></div>
+    <div class="navbar">
+        <ul>
+            <li id="blur">moz</li>
+            <li id="blur">khiar</li>
+            <li id="blur">sib</li>
+            <li id="blur">jafari</li>
+            <li id="blur">sibzamini</li>
+            <li id="blur">golabi</li>
+            <li id="blur">alo</li>
+            <li id="blur">more<span class="material-symbols-outlined">arrow_drop_down</span></li>
+        </ul>
+    </div>
+    <div class="container">
+
+        <div class="post">
+            <div class="photo"></div>
+            <div class="information">
+                <p><span class="material-symbols-outlined">date_range</span>: 23 jul 2023</p>
+                <p><i class="fa-solid fa-feather-pointed"></i>: faraz farrokhnia</p>
+                <p><i class="fa-solid fa-eye"></i> : 1445views</p>
+                <p><i class="fa-solid fa-heart"></i> : 4200 likes</p>
+                <p><i class="fa-solid fa-file-lines"></i>:<br> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas vero sequi aperiam magnam ea atque accusamus, perferendis earum suscipit alias. Numquam nemo ea atque nihil porro tenetur, et facilis praesentium.</p>
+            </div>
+            <div class="items">
+                <div class="squre"><i class="fa-solid fa-download"></i></div>
+                <div class="squre"><i class="fa-solid fa-comments"></i></div>
+                <div class="squre"><i class="fa-regular fa-heart"></i></div>
+                <div class="squre"> <i class="fa-solid fa-share-from-square"></i></div>
+            </div>
+        </div>
+        <div class="prevnext"></div>
+
+
+    </div>
+
+    
 </body>
 </html>

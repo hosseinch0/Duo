@@ -6,36 +6,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{% static 'assets/css/loginresponsive.css' %}">
         <script src="https://kit.fontawesome.com/006cb90729.js" crossorigin="anonymous"></script>
-        <title>Log In</title>
+        <title>LogIn</title>
     </head> 
     <body>
     <div class="container tilt-in-br">
         <div class="left">
-            <h1 class="tracking-in-expand" >Welcome back! &#128400</h1>
+            <h1 class="tracking-in-expand" >Welcome Back ! &#128400</h1>
             <form action="{% url 'users:login' %}" method="post">
                 {% csrf_token %}
-                <!-- <p style="width: 70%; margin-top: 10px; font-size: 15px; font-family: sans-serif; color: rgba(57, 54, 54, 0.646);">you can also login with:</p> -->
-                <!-- <div class="socialmedia">
+                <p style="width: 70%; margin-top: 10px; font-size: 15px; font-family: sans-serif; color: rgba(57, 54, 54, 0.646);">you can also login with:</p>
+                <div class="socialmedia">
                     <a href=""><i id="google" class="fa-brands fa-google"></i></a>
                     <a href=""><i id="facebook" class="fa-brands fa-facebook"></i></a>
                     <a href=""><i id="twitter" class="fa-brands fa-twitter"></i></a>
-                </div> -->
+                </div>
                 
-                <label for="email">Username:</label>
-                <input type="text" placeholder="username..." name="username" required>
+                <label for="username">username:</label>
+                <input type="text" name="username" required>
 
-                <label for="pass">Password:</label>
-                <input type="password" placeholder="password..." name="password" required>
-                <p style="width: 70%;margin-top: 10px; font-size: 13px; font-family: sans-serif; color:rgba(54, 51, 51, 0.817)"><a href="{% url 'users:signup' %}">You don't have an account ?</a></p>
+                <label for="password">password:</label>
+                <input type="password" name="password" required>
+                <p style="width: 70%;margin-top: 10px; font-size: 13px; font-family: sans-serif; color:rgba(54, 51, 51, 0.817)"><a href="{% url 'users:signup' %}"> you don't have an account ?</a></p>
                 
-                <button type="submit" style="background-color: rgb(110, 145, 198); margin-top: 25px; height: 45px; width: 75px;">SignUp</button>
+                <button type="submit">LogIn</button>
 
             </form>
         </div>
         <div class="right">
             <div class="box">
-                    <h1>Lorem ipsum dolor sit amet consecte</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae maiores voluptatibus illum quod molestias voluptatem natus. Aliquam repudiandae quibusdam quasi facere minus fuga asperiores. Ex suscipit reprehenderit magni veniam labore?</p>
+                    <h1>LOGIN</h1>
+                    <p>If you have trouble of any kind be in touch with admins through opening <a href="#">Tickets...</a></p>
+                    <p>Don't forget to check the daily Posts and send us back your valuable opinions</p>
             </div>
         </div>
     </div>

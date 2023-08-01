@@ -1,0 +1,120 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.top{
+    width: 100vw;
+    height: 5vh;
+}
+.navbar{
+    width: 100%;
+    height: 6vh;
+    background: rgba(131, 58, 180, 0.424);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.703);
+background: linear-gradient(270deg, rgba(131, 58, 180, 0.571) 0%, rgba(253, 29, 29, 0.611) 50%, rgba(252, 176, 69, 0.69) 100%);
+    
+}
+.navbar ul{
+    display: flex;
+    list-style: none;
+    width: 100%;
+    height: 6vh;
+    transition: .75s;
+}
+.navbar ul li{
+    width: 12.5%;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 17;
+    transition: 0.75s;
+    color:rgba(0, 0, 0, 0.595);
+}
+ul:hover > #blur{
+    filter: blur(3px);
+    
+}
+ul > #blur:hover {
+    color:#222;
+    filter: blur(0px);
+    text-shadow:none;
+    background: rgb(131,58,180);
+background: linear-gradient(270deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+.container{
+    width: 100vw;
+    height: 89vh;
+    
+    justify-content: center;
+    align-items:center;
+    display: flex;
+    flex-direction: column;
+
+}
+.post{
+    width: 80%;
+    height: 60%;
+    background-color:#f2f2f2;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 30px 40px 1px rgba(46, 46, 46, 0.597);
+}
+.photo{
+    height: 100%;
+    width: 35%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    background-image: url(/photos/Jowhareh_galleries_6_poster_3b11a1a5-34ac-435d-83be-cc7e505e1aa5.jpeg);
+}
+.information{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.information p{
+    padding: 0 20px;
+    width: 80%;
+    font-family: sans-serif;
+    margin: 15px;
+    border-bottom: .5px dotted #222;
+
+}
+.items{
+    width: 10%;
+    height:100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #222;
+    border-radius: 5px;
+}
+.prevnext{
+    width: 100%;
+    height: 10%;
+    background-color: aliceblue;
+    margin-top: 5vh;
+}
+.squre{
+    height: 25%;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    transition: .5s;
+}
+
+.squre:hover{
+    background-color: #f2f2f2;
+    color:#222;
+}
