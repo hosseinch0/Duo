@@ -3,7 +3,7 @@ from django.contrib.auth import logout, login, authenticate
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
 from users.forms import RegistrationForm
-
+from users.models import Profile
 # Create your views here.
 
 
@@ -18,7 +18,8 @@ def login_view(request):
                 print("User found")
                 login(request, user)
                 messages.add_message(request, messages.SUCCESS, "Authentication successful, Logged in successfully")
-                return redirect("/")
+                context = {"user": user}
+                return render(request, "users/profile.html", context)
             else:
                 messages.add_message(request, messages.ERROR, "Authentication failed")
     
@@ -57,3 +58,13 @@ def logout_view(request):
     else:
         messages.add_message(request, messages.ERROR, "Logging out failed")
     return redirect("/")
+
+
+
+def profile_view(request):
+    if request.user.is_authenticated:
+        if request.method == "GET":
+            profile = Profile.objects.filter()
+            context = {"profile": profile}
+            return render(request, "users/profile.html", context)
+    return render(request, "users/login.html")
