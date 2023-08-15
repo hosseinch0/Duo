@@ -1,0 +1,63 @@
+@media only screen and (max-width:992px)
+{
+    .resp{
+        display: none;
+    }
+    #user{
+        display: none;
+    }
+    #menubutton{
+        display: flex;
+        justify-content: flex-end;
+        padding:20px;
+    }
+    .navright{
+        width: 100%;
+    }
+    .responsivenavigationbar{
+        display:flex;
+        z-index: 100;
+        position:fixed;
+    }
+    .navigationbar{
+        position: fixed;
+        z-index: 20;
+        top:0;
+    }
+    .container{
+        margin-top: 11vh;
+    }
+    .navbar{
+        margin-top: 11vh;
+    }
+}
+
+@media only screen and (max-width:650px)
+{
+    body{
+        flex-direction: column;
+    }
+    .container{
+        margin-top: 14vh;
+        width: 100%;
+        height: 80vh;
+    }
+    .navbar{
+        width: 100%;
+        height: 35vh;
+        position:absolute;
+        top:7vh;
+        z-index: 5;
+    }
+    
+    .navbar ul{
+        padding: 0;
+    }
+    .navbar ul li{
+        height: 7vh;
+    }
+    #show{
+        display:flex;
+    }
+    
+}

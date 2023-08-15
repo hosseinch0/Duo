@@ -1,20 +1,22 @@
 {% load static %}
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="{% static 'assets/css/signin.css' %}">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static 'assets/css/signinresonsive.css' %}">
-        <title>SignUp</title>
-    </head> 
-    <body>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'assets/css/signin.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'assets/css/signinresonsive.css' %}">
+    <title>SignUp</title>
+</head>
+
+<body>
     <div class="container tilt-in-tl">
         <div class="left">
-            <h1 class="tracking-in-expand" >Registration</h1>
+            <h1 class="tracking-in-expand">Registration</h1>
             <form action="{% url 'users:signup' %}" method="post">
                 {% csrf_token %}
-                <label for="username">Username:</label>
-                <input type="text" name="username" >
+                <!-- <label for="username">Username:</label>
+                <input type="text" name="username" > -->
 
                 <!-- <label for="fname">First name:</label>
                 <input type="text"  name="first_name" required>
@@ -23,29 +25,33 @@
                 <input type="text" name="last_name" required> -->
 
                 <label for="email">Email:</label>
-                <input type="email"  name="email" required>
+                <input type="email" name="email" required>
 
                 <label for="pass">Password:</label>
-                <input type="password"  name="password1" required>
+                <input type="password" name="password1" required>
 
                 <label for="password">Password Confirmation:</label>
                 <input type="password" name="password2" required>
 
-                <p style="width: 70%;margin-top: 10px; font-size: 13px; font-family: sans-serif; color:rgba(54, 51, 51, 0.817)"><a href="{% url 'users:login' %}">You have an account ?</a></p>
-                
+                <p
+                    style="width: 70%;margin-top: 10px; font-size: 13px; font-family: sans-serif; color:rgba(54, 51, 51, 0.817)">
+                    <a href="{% url 'users:login' %}">You have an account ?</a></p>
+
                 <button>SignUp</button>
 
             </form>
         </div>
         <div class="right">
             <div class="box">
-                    <h1>Advantages :</h1>
-                    <p>By Registering You Get access to daily posts about programming tips and practical uses in many different languages and their frameworks</p>
-                    <p>Python's most useful libraries and frameworks such as Django</p>
-                    <p>JavaScript, C#, C++, and many other programming languages</p>
+                <h1>Advantages :</h1>
+                <p>By Registering You Get access to daily posts about programming tips and practical uses in many
+                    different languages and their frameworks</p>
+                <p>Python's most useful libraries and frameworks such as Django</p>
+                <p>JavaScript, C#, C++, and many other programming languages</p>
             </div>
         </div>
     </div>
-    
+
 </body>
+
 </html>

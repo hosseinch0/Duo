@@ -3,10 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-.top{
-    width: 100vw;
-    background-color: #ffffff;
-}
+
 .top i{
     display: none;
 }
@@ -18,13 +15,12 @@ body{
     align-items: center;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: #222;
-   
+   background-color: #222;
 }
 .navigationbar{
     width: 100%;
     height: 11vh;
-    background-color: white;
+    background-color: #222;
 }
 .navigationbar ul{
     width: 100%;
@@ -49,7 +45,7 @@ body{
     text-decoration: none;
     font-size: 16px;
     font-family: sans-serif;
-    color:#222;
+    color:gray;
     font-weight: 550;
     padding:32px;
     transition: border-bottom;
@@ -61,11 +57,13 @@ body{
     border-bottom: 5px solid #76ffff;
 }
 #menubutton span{
-    font-size: 45px;
-    color:#222;
+    font-size: 40px;
+    color:gray;
     
 }
 #menubutton{
+    justify-content: flex-start;
+    align-items: center;
     display: none;
 }
 li input{
@@ -73,7 +71,7 @@ li input{
     border: none;
     width: 70%;
     padding: 10px 15px;
-    background-color: #f2f2f2;
+    background-color: rgb(78, 74, 74);
     color:#222;
     font-family: sans-serif;
     font-weight: 550;
@@ -83,21 +81,21 @@ li input{
 li button{
     cursor: pointer;
     border: none;
-    background-color:#3e3c3c;
+    background-color:gray;
     padding:6px 25px;
-    color:#f1f1f1;
+    color:#222;
     border-radius: 25px;
     transition: 0.5s;
     box-shadow: 0px 3px 10px ;
 }
 li button:hover{
-    color: #222;
-    background-color:#f1f1f1;
+    color: #f1f1f1;
+    background-color:#222;
     font-weight: 600;
 }
 #search{
     font-size: 30px;
-    color:#222;
+    color:gray;
     transition: 0.5s;
     cursor: pointer;
 }
@@ -116,11 +114,11 @@ li button:hover{
     justify-content: center;
 }
 .themebutton i{
-    color:rgb(182, 185, 199);
+    color:#222;
 }
 .backgroundbutton{
     
-    background-color: #2e2d2d;
+    background-color: gray;
     width: 116px;
     display: flex;
     position: relative;
@@ -139,7 +137,7 @@ li button:hover{
     z-index: 5;
     animation-duration: 0.5s;
     height: 34px;
-    background:rgba(51, 48, 48, 0.978);
+    background:gray;
     border-radius: 50%;
     left: 3px;
     box-shadow: 0px 0px 5px black;
@@ -171,7 +169,7 @@ li button:hover{
 
 .responsivenavigationbar{
     position: absolute;
-    background-color:whitesmoke;
+    background-color:#222;
     height:89vh;
     right:-350px;
     z-index: 20;
@@ -205,7 +203,7 @@ li button:hover{
     text-decoration: none;
     font-family: sans-serif;
     font-size: 20px;
-    color:#222;
+    color:gray;
     transition: .15s;
 }
 .home{
@@ -259,9 +257,13 @@ li button:hover{
 
     width: 20%;
     height: 84vh;
-    background-color: white;
+    background-color: #2a2929;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.703);
     transition: 1s;
+}
+span{
+    color: gray;
+    cursor: pointer;
 }
 .navbar ul{
     display: flex;
@@ -275,26 +277,24 @@ li button:hover{
     width: 100%;
     height:7vh;
     display: flex;
-    justify-content:center;
-    padding: 0 40px;
+    justify-content: center;
     align-items: center;
     font-family: sans-serif;
     font-size: 17;
     transition: 0.25s;
     z-index: 1;
-    color:#222;
-    
+    color:rgba(255, 255, 255, 0.595);
 }
 ul:hover > #blur{
     filter: blur(1.5px);
     
 }
 ul > #blur:hover {
-    color:#f2f2f2;
+    color:gray;
     filter: blur(0px);
     text-shadow:none;
     letter-spacing: 5px;
-    background-color: #3c3a3a;
+    background-color: #434040;
 }
 .dropdown{
     position: relative;
@@ -302,58 +302,52 @@ ul > #blur:hover {
 .dropdown:hover .dropdown_content{
     display: block;
 }
-#show{
-    display:none;
-    position: fixed;
-    top: 11vh;
-    z-index:10;
-    background-color: white;
-    width: 100%;
-    justify-content: center;
-    height: 7vh;
-    align-items: center;
-}
+
 .dropdown_content{
-    height: 700%;
+    height:200px;
     position: absolute;
-    left: 0;
     width: 100%;
     top:100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     display:none;
-    z-index:20;
+    background-color: #2a2929;
+    z-index: 20;
     overflow-y: scroll;
-    background-color: white;
     
 }
 .dropdown_content div{
     width: 100%;
-    height: 14.28%;
-    color:#222;
+    height:25%;
+    color:rgba(255, 255, 255, 0.595);
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     transition: .25s;
     z-index: 20;
+}
+#show{
+    display:none;
+    position: fixed;
+    top: 11vh;
+    z-index:10;
+    background-color:#333232;
+    width: 100%;
+    justify-content: center;
+    height: 7vh;
+    color:white;
+    align-items: center;
 }
 .dropdown_content:hover > #dropblur{
     filter: blur(1.5px);
     
 }
 .dropdown_content > #dropblur:hover {
-    color:#f2f2f2;
+    color:gray;
     filter: blur(0px);
     text-shadow:none;
-    background-color: #393737;
-}
-#show{
-    cursor: pointer;
-    display: none;
-}
-#show span{
-    font-size: 30px;
+    background-color:#434040;
 }
 .container{
     width: 80%;
@@ -365,7 +359,7 @@ ul > #blur:hover {
     align-content: flex-start;
     align-items:flex-start;
     overflow-y: scroll;
-    background-color: white;
+    background-color:#2a2a2a;
 }
 ::-webkit-scrollbar{
     width:10px;
@@ -374,7 +368,7 @@ ul > #blur:hover {
     background-color:#403e3e;
 }
 ::-webkit-scrollbar-track{
-    background-color: #fffefec8;
+    background-color: rgb(94, 94, 94);
 }
 ::-webkit-scrollbar-button{
     display: none;
