@@ -8,10 +8,12 @@
 </head>
 
 <body>
+    {% if profile.user.first_name == None %}
     <h1>{{ user.profile.first_name }} {{user.profile.last_name}}'s Profile</h1>
     <h3>PhoneNumber: {{ user.profile.phone_number}}</h3>
-    <h1>{{ user.email }}</h1>
     {{profile.last_name}}
+    {% endif %}
+    <h1>{{ user.email }}</h1>
     <img src="{{ user.profile.image.url }}" />
     <a href="{% url 'blog:create' %}">Create post</a>
 </body>

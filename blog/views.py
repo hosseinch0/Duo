@@ -40,6 +40,12 @@ class PostDetailView(LoginRequiredMixin, DetailView, PermissionRequiredMixin):
     template_name = "blog/single.html"
     context_object_name = "post"
 
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data["profile"] = Profile.objects.filter(
+            user=self.request.user)
+        return context_data
+
 
 class PostCreateView(LoginRequiredMixin, CreateView, PermissionRequiredMixin):
     """ Custom Post Creation via custom templates """

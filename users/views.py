@@ -1,5 +1,3 @@
-from typing import Any, Dict
-from django import http
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
@@ -9,6 +7,8 @@ from django.views.generic import ListView
 from users.forms import RegistrationForm
 from django.contrib import messages
 from users.models import Profile
+from typing import Any, Dict
+from django import http
 # Create your views here.
 
 
@@ -48,6 +48,7 @@ def signup_view(request):
                 form.save()
                 messages.add_message(
                     request, messages.SUCCESS, "Signed Up successfully !")
+                return HttpResponseRedirect("/users/login/")
             else:
                 print("invalid form")
                 messages.add_message(
@@ -69,19 +70,11 @@ def logout_view(request):
     return redirect("/")
 
 
-def profile_view(request):
-    if request.user.is_authenticated:
-        if request.method == "GET":
-            profile = Profile.objects.filter()
-            context = {"profile": profile}
-            return render(request, "users/profile.html", context)
-    return render(request, "users/login.html")
-
-
 class ProfileView(ListView, LoginRequiredMixin):
-    template_name = "Users/profile.html"
-    queryset = Profile.objects.filter()
+
+    model = Profile
     context_object_name = "profile"
+    template_name = "Users/profile.html"
 
     def dispatch(self, request, *args, **kwargs):
         """ IF NOT AUTHENTICATED TO SEE THE PROFILE REDIRECTS TO THE LOGIN PAGE """

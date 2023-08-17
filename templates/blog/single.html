@@ -1,19 +1,125 @@
 {% load static %}
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="' %}UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Single</title>
+    <link rel="stylesheet" id="theme" href="{% static 'assets/css/more.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/moreresponsive.css' %}">
+    <script src="https://kit.fontawesome.com/006cb90729.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>posts</title>
 </head>
 
 <body>
-    <h1>{{ post.author }}</h1>
-    <h3>{{ post.title }}</h3>
-    <h4>{{ post.content }}</h4>
-    <a href="{% url 'blog:update' pk=post.id %}">UPDATE</a>
-    <a href="{% url 'blog:delete' pk=post.id %}">Delete</a>
+    <div class="navigationbar" id="nav">
+        <ul>
+            <div class="navleft resp">
+                <li class="home"><a href="{% url 'website:home' %}"><i class="fa-solid fa-house"></i> Home </a></li>
+                <li><a href="{% url 'blog:home' %}"><i class="fa-solid fa-handshake"></i> cooperation request</a>
+                </li>
+                <li><a href="{% url 'website:home' %}"><i class="fa-solid fa-cubes"></i> Blog</a></li>
+
+            </div>
+            <div class="navright">
+                <li id="theme">
+                    <div class="themebutton">
+                        <div class="backgroundbutton">
+                            <div>
+                                <i class="fa-solid fa-sun"></i>
+                            </div>
+                            <div class="ball" id="ball">
+                                <i id="icon" class="fa-solid fa-sun"></i>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-moon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span id="search" class="material-symbols-outlined">search</span>
+                    <input type="text" placeholder="search">
+                </li>
+                <li class="user" id="user">
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'users:profile' %}"><img id="img" src="{{user.profile.image.url }}"
+                            alt="{{user.profile.image }}"></a>
+                    <a href="{% url 'users:logout' %}"><button>Logout</button></a>
+                    {% else %}
+                    <img id="img" src="{{user.profile.image.url }}" alt=" {{ user.profile.image }}">
+                    <a href="{% url 'users:login' %}"><button>Login</button></a>
+                    {% endif %}
+                </li>
+                <li id="menubutton"><span id="menu" class="material-symbols-outlined">menu</span></li>
+            </div>
+        </ul>
+
+    </div>
+    <div class="responsivenavigationbar" id="sidenavbar">
+        <ul>
+            <li class="user" id="responsiveuser">
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'users:profile' %}"><img id="img" src="{{user.profile.image.url }}"
+                        alt="{{user.profile.image }}"></a>
+                <a href="{% url 'users:logout' %}"><button>Logout</button></a>
+                {% else %}
+                <img id="img" src="{{user.profile.image.url }}" alt=" {{ user.profile.image }}">
+                <a href="{% url 'users:login' %}"><button>Login</button></a>
+                {% endif %}
+            </li>
+            <li class="links home"><a href="{% url 'website:home' %}"><i class="fa-solid fa-house"></i> Home </a></li>
+            <li class="links"><a href="{% url 'blog:home' %}"><i class="fa-solid fa-cubes"></i> Blog</a></li>
+            <li class="links"><a href="{% url 'blog:home' %}"><i class="fa-solid fa-handshake"></i> Cooperation
+                    Request</a></li>
+
+        </ul>
+
+    </div>
+    <img class="background" id="background" src="{{post.image.url}}" alt="">
+
+    <div class="container">
+
+        <div class="post" id="color">
+            <div class="photo slide-in-left" id="photo">
+
+            </div>
+            <div class="information slide-in-top">
+                <p><span class="material-symbols-outlined">date_range</span> : {{ post.created_at|date:"M d Y"}}</p>
+                <p><i class="fa-solid fa-user"></i> : {{ user.profile.first_name }} {{ user.profile.last_name }}</p>
+                <p><i class="fa-solid fa-eye"></i> : 1445views</p>
+                <p><i class="fa-solid fa-heart"></i> : 4200 likes</p>
+            </div>
+            <div class="infobox slide-in-right"><i class="fa-solid fa-feather-pointed"></i>
+
+                {{ post.content }}
+
+            </div>
+            <div class="items">
+                <div class="squre"><i class="fa-solid fa-download"></i></div>
+                <div class="squre"><i class="fa-solid fa-comments"></i></div>
+                <div class="squre"><i class="fa-regular fa-heart"></i></div>
+                <div class="squre"> <i class="fa-solid fa-share-from-square"></i></div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!-- <div class="prevnext">
+        <button class="first"><i class="fa-solid fa-backward"></i></button>
+        <button class="prev"><i class="fa-solid fa-caret-left"></i></button>
+        <button class="numbers">1</button>
+        <button class="numbers">2</button>
+        <p>.....</p>
+        <button class="numbers">3</button>
+        <button class="next"><i class="fa-solid fa-caret-right"></i></button>
+        <button class="last"><i class="fa-solid fa-forward"></i></button>
+    </div> -->
+
+
 </body>
+<script src="{% static 'assets/js/more.js' %}"></script>
 
 </html>
