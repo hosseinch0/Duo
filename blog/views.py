@@ -1,9 +1,8 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.forms.models import BaseModelForm
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_list_or_404
-
+from django.forms.models import BaseModelForm
 from blog.models import Post, Category
 from users.models import Profile
 from blog.forms import PostForm

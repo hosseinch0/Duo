@@ -8,10 +8,11 @@
 </head>
 
 <body>
-    <h1>{{ user.first_name}}'s Profile</h1>
-    <h1>{{user.email}}</h1>
+    <h1>{{ user.profile.first_name }} {{user.profile.last_name}}'s Profile</h1>
+    <h3>PhoneNumber: {{ user.profile.phone_number}}</h3>
+    <h1>{{ user.email }}</h1>
+    {{profile.last_name}}
     <img src="{{ user.profile.image.url }}" />
-    <h2>{{user.username}}</h2>
     <a href="{% url 'blog:create' %}">Create post</a>
 </body>
 

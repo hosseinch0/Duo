@@ -1,8 +1,13 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import logout, login, authenticate
-from django.contrib import messages
+from typing import Any, Dict
+from django import http
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
+from django.contrib.auth import logout, login, authenticate
+from django.shortcuts import render, redirect
+from django.views.generic import ListView
 from users.forms import RegistrationForm
+from django.contrib import messages
 from users.models import Profile
 # Create your views here.
 
@@ -71,3 +76,21 @@ def profile_view(request):
             context = {"profile": profile}
             return render(request, "users/profile.html", context)
     return render(request, "users/login.html")
+
+
+class ProfileView(ListView, LoginRequiredMixin):
+    template_name = "Users/profile.html"
+    queryset = Profile.objects.filter()
+    context_object_name = "profile"
+
+    def dispatch(self, request, *args, **kwargs):
+        """ IF NOT AUTHENTICATED TO SEE THE PROFILE REDIRECTS TO THE LOGIN PAGE """
+        if not request.user.is_authenticated:
+            return HttpResponseRedirect("/users/login")
+        return super().dispatch(request, *args, **kwargs)
+
+    # def get_context_data(self, **kwargs):
+    #     context_data = super().get_context_data(**kwargs)
+    #     context_data["profile"] = Profile.objects.filter(
+    #         user=self.request.user)
+    #     return context_data

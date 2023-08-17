@@ -157,3 +157,6 @@ REST_FRAMEWORK = {
     #     'rest_framework.authentication.SessionAuthentication',
     # ]
 }
+
+# USER MANAGER SETTINGS
+AUTH_USER_MODEL = "users.CustomUser"
