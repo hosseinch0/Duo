@@ -26,30 +26,50 @@
 
 <div class="container" id="container">
 
-    {% for post in posts %}
+    {% for post in page_obj %}
     <div class="box" id="box">
-        <img src="{{post.image.url}}" alt="">
+        <img src="{{post.image.url}}" alt="{{post.image.url}}">
         <div class="buttons" id="buttons">
             <div class="squre"><i class="fa-solid fa-download"></i></div>
             <div class="squre"><i class="fa-solid fa-comments"></i></div>
             <div class="squre"><i class="fa-regular fa-heart"></i></div>
-            <div class="squre"> <i class="fa-solid fa-share-from-square"></i></div>
+            <div class="squre"><a href="{% url 'blog:single' pk=post.id%}"><i
+                        class="fa-solid fa-share-from-square"></i></a>
+            </div>
         </div>
         <p id="title" class="tracking-in-contract-bck">{{post.title}}</p>
     </div>
 
     {% endfor %}
 </div>
+
+{% if is_paginated %}
 <div class="prevnext">
-    <button class="first"><i class="fa-solid fa-backward"></i></button>
-    <button class="prev"><i class="fa-solid fa-caret-left"></i></button>
+    {% if page_obj.has_previous %}
+    <button class="first"><a href="?page=1"><i class="fa-solid fa-backward"></i></a></button>
+    <button class="prev"><a href="?page={{ page_obj.previous_page_numper }}"><i
+                class="fa-solid fa-caret-left"></i></a></button>
+    {% endif %}
+    <!-- 
     <button class="numbers">1</button>
     <button class="numbers">2</button>
     <p style="color:#f2f2f2">.....</p>
-    <button class="numbers">3</button>
-    <button class="next"><i class="fa-solid fa-caret-right"></i></button>
-    <button class="last"><i class="fa-solid fa-forward"></i></button>
+    <button class="numbers">3</button>-->
+
+    <span class="current">
+        <p style="color:aliceblue;">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</p>
+    </span>
+    {% if page_obj.has_next %}
+    <button class="next"><a href="?page={{ page_obj.next_page_number }}"><i
+                class="fa-solid fa-caret-right"></i></a></button>
+    <button class="last"><a href="?page={{ page_obj.paginator.num_pages }}"><i
+                class="fa-solid fa-forward"></i></a></button>
+    {% endif %}
 </div>
+
+
+
 <script src="{% static 'assets/js/blog.js' %}"></script>
 </body>
+{% endif %}
 {% endblock %}

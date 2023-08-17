@@ -1,7 +1,7 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.contrib.auth import logout, login, authenticate
 from django.contrib import messages
-from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from users.forms import RegistrationForm
 from users.models import Profile
 # Create your views here.
@@ -10,19 +10,21 @@ from users.models import Profile
 def login_view(request):
     if not request.user.is_authenticated:
         if request.method == "POST":
+            print("post")
             username = request.POST.get("username")
             password = request.POST.get("password")
-
             user = authenticate(request, username=username, password=password)
             if user != None:
                 print("User found")
                 login(request, user)
-                messages.add_message(request, messages.SUCCESS, "Authentication successful, Logged in successfully")
+                messages.add_message(
+                    request, messages.SUCCESS, "Authentication successful, Logged in successfully")
                 context = {"user": user}
                 return render(request, "users/profile.html", context)
             else:
-                messages.add_message(request, messages.ERROR, "Authentication failed")
-    
+                messages.add_message(
+                    request, messages.ERROR, "Authentication failed")
+
         form = AuthenticationForm()
         context = {"form": form}
         return render(request, "Users/login.html", context)
@@ -39,10 +41,12 @@ def signup_view(request):
             if form.is_valid():
                 print("valid form")
                 form.save()
-                messages.add_message(request, messages.SUCCESS, "Signed Up successfully !")
+                messages.add_message(
+                    request, messages.SUCCESS, "Signed Up successfully !")
             else:
                 print("invalid form")
-                messages.add_message(request, messages.ERROR, "Account did not registered !!!")
+                messages.add_message(
+                    request, messages.ERROR, "Account did not registered !!!")
         form = RegistrationForm()
         context = {"form": form}
         return render(request, "Users/signup.html", context)
@@ -50,15 +54,14 @@ def signup_view(request):
         return redirect('/')
 
 
-
 def logout_view(request):
     if request.user.is_authenticated:
         logout(request)
-        messages.add_message(request, messages.SUCCESS, "Successfully logged out")
+        messages.add_message(request, messages.SUCCESS,
+                             "Successfully logged out")
     else:
         messages.add_message(request, messages.ERROR, "Logging out failed")
     return redirect("/")
-
 
 
 def profile_view(request):

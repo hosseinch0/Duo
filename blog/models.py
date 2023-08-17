@@ -6,7 +6,8 @@ from users.models import Profile
 
 
 class Post(models.Model):
-    image = models.ImageField(upload_to="blog", default="/blog/default.jpg")
+    image = models.ImageField(upload_to="blog/photos",
+                              default="/blog/default.jpg")
     author = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=30)
     content = models.TextField(max_length=500)

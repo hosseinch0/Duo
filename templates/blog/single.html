@@ -1,15 +1,19 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single</title>
 </head>
+
 <body>
-    {% for post in posts %}
-        <h3>{{post.title}}</h3>
-        <h4>{{post.content}}</h4>
-    {% endfor%}
+    <h1>{{ post.author }}</h1>
+    <h3>{{ post.title }}</h3>
+    <h4>{{ post.content }}</h4>
+    <a href="{% url 'blog:update' pk=post.id %}">UPDATE</a>
+    <a href="{% url 'blog:delete' pk=post.id %}">Delete</a>
 </body>
+
 </html>
